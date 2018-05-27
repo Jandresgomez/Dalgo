@@ -1,5 +1,3 @@
-
-
 //David Felipe Niño Romero 				201412734
 //María del Rosario León				201423755
 
@@ -42,15 +40,21 @@ public class ProblemaC
 		parrafo = "";
 		parrafo = in.readLine();
 		while (parrafo != null)
-		{		
-			rioFinal=0;
+		{
+			if(parrafo.isEmpty())
+			{
+				System.out.println("El texto ingresado está vacío, intente de nuevo");
+			}
+			else 
+			{
+				rioFinal=0;
 
-			anchoFinal=0;
+				anchoFinal=0;
 
-			funcion();
-
-			parrafo = in.readLine();			
-		}	
+				funcion();
+			}
+			parrafo = in.readLine();
+		}
 	}
 
 	public void funcion()
@@ -86,7 +90,7 @@ public class ProblemaC
 
 		int rioActual=0;
 
-		while((parrafo.length()/anchoActual)>1) {
+		while((parrafo.length()/anchoActual)>1 && (parrafo.length()/anchoActual)>rioFinal) {
 
 			lineas = new ArrayList<String>();
 
