@@ -47,6 +47,8 @@ public class ProblemaB {
 					//Caso donde el arreglo[0..i] esta maximizado (no tiene sp con k=1)
 					int replacement = 10;
 					int index = -1;
+					
+					//Encontrar el menor digito que sea mayor a n[i]
 					for(int j = 0; j < i; j++) {
 						if(n[i] < n[j] && n[j] < replacement) {
 							index = j;
@@ -58,8 +60,10 @@ public class ProblemaB {
 					n[i] = replacement;
 					arr = Arrays.copyOf(n, i);
 					
+					//Encontrar el sp maximo de la subcadena
 					Arrays.sort(arr);
 					
+					//Anexarla al reves a la cadena original, dando como resultado la subcadena de menor valor
 					for(int j = 0; j < arr.length; j++) {
 						n[j] = arr[arr.length - 1 - j];
 					}
@@ -67,6 +71,7 @@ public class ProblemaB {
 					//Caso donde el arreglo[0..i] si tiene sp
 					arr = toIntArray(res);
 					
+					//Anexarla a la cadena original
 					for(int j = 0; j < arr.length; j++) {
 						n[j] = arr[j];
 					}
@@ -74,6 +79,7 @@ public class ProblemaB {
 			}
 		}
 		
+		//Pasar de cadena de ints a un string
 		String num = "";
 		for(int p = n.length - 1; p >= 0; p--) num += n[p] + "";
 		return num;
