@@ -1,5 +1,5 @@
-//David Felipe Niño Romero 				201412734
-//María del Rosario León				201423755
+//David Felipe Nino Romero 				201412734
+//Maria del Rosario Leen				201423755
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -43,7 +43,7 @@ public class ProblemaC
 		{
 			if(parrafo.isEmpty())
 			{
-				System.out.println("El texto ingresado está vacío, intente de nuevo");
+				System.out.println("El texto ingresado esta vacio, intente de nuevo");
 			}
 			else 
 			{
