@@ -1,3 +1,6 @@
+//David Felipe Nino Romero 				201412734
+//Maria del Rosario Leon				201423755
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -48,7 +51,6 @@ public class ProblemaA {
 		BufferedReader br = null;
 		try {
 			br = new BufferedReader(new InputStreamReader(System.in));
-			
 			String line = br.readLine();
 			while(line != null) {
 				String[] split = line.split(" ");
