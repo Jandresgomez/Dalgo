@@ -2,7 +2,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 
-public class P1 {
+public class P2 {
 	public static String NOT_FOUND = "*";
 	
 	public static void close(BufferedReader br) {
@@ -37,13 +37,14 @@ public class P1 {
 		for(int kActual = 1; kActual <= k; kActual++) {
 			int i = sortedIndex(n);
 			if(i >= n.length) {
+				//Caso donde no existe sp(n,1), puesto que n es el maximo posible.
 				return NOT_FOUND;
 			} else {
 				int[] arr = Arrays.copyOf(n, i);
-				System.out.println(Arrays.toString(arr));
 				String res = sp(arr, 1);
 				
 				if(res.equals(NOT_FOUND)) {
+					//Caso donde el arreglo[0..i] esta maximizado (no tiene sp con k=1)
 					int replacement = 10;
 					int index = -1;
 					for(int j = 0; j < i; j++) {
@@ -55,10 +56,20 @@ public class P1 {
 					
 					n[index] = n[i];
 					n[i] = replacement;
+					arr = Arrays.copyOf(n, i);
 					
 					Arrays.sort(arr);
-				} else {
 					
+					for(int j = 0; j < arr.length; j++) {
+						n[j] = arr[arr.length - 1 - j];
+					}
+				} else {
+					//Caso donde el arreglo[0..i] si tiene sp
+					arr = toIntArray(res);
+					
+					for(int j = 0; j < arr.length; j++) {
+						n[j] = arr[j];
+					}
 				}
 			}
 		}
