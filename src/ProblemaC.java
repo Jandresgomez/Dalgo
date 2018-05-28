@@ -11,8 +11,6 @@ public class ProblemaC
 {
 	private static BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 
-	private String[] palabras;
-
 	private String parrafo;
 
 	private int anchoMin;
@@ -43,7 +41,7 @@ public class ProblemaC
 		{
 			if(parrafo.isEmpty())
 			{
-				System.out.println("El texto ingresado está vacío, intente de nuevo");
+				System.out.println("0 0");
 			}
 			else 
 			{
@@ -59,8 +57,6 @@ public class ProblemaC
 
 	public void funcion()
 	{
-		palabras = parrafo.split(" ");
-
 		palabraMasLarga();
 
 		rioMasLargo();
@@ -69,9 +65,11 @@ public class ProblemaC
 	}
 
 	public void palabraMasLarga()
-	{
-		int respuesta = -1;
-
+	{			
+		String[] palabras = parrafo.split(" ");
+		
+		int respuesta=-1;
+		
 		for(int i=0;i <palabras.length; i++)
 		{
 			if (palabras[i].length()>respuesta)
@@ -79,8 +77,9 @@ public class ProblemaC
 				respuesta = palabras[i].length();
 			}
 		}
-
-		anchoMin =  respuesta;
+		
+		anchoMin=respuesta;
+		
 		anchoFinal=anchoMin;
 	}
 
